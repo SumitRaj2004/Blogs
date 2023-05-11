@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size : 62.5%;
+    --gray-color: #f4f4f4;
+    --dark-color : #18122B;
+    --light-dark-color : #3c3c3c;
+    --green-color : #28DF99;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    max-width: 1280px;
+    width: 95%;
+    margin : 0 auto;
+}
+
+.navbar{
+    padding: 1rem 0;
+    background-color:  var(--gray-color);
+    max-width: 100%;
+}
+
+.navbar > .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar > .container .navbar-logo{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.navbar > .container .navbar-items{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    list-style: none;
+}
+
+.navbar-items li a:link,
+.navbar-items li a:visited{
+    color: var(--light-dark-color);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+.navbar-items li a:hover,
+.navbar-items li a:active{
+   color: var(--green-color);
+}
+
+
+/* home section */
+.home-section{
+    padding : 5rem 0;
+}
+
+.home-section > .container > h1{
+    font-size: 3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.home-section > .container > p{
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--light-dark-color);
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+
+
+
+/* about-section */
+.about-section{
+    padding : 5rem 0;
+}
+
+.about-section > .container > h1{
+    font-size: 3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.about-section > .container > p{
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--light-dark-color);
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+
+
+
+/* blogs section */
+.blogs-section{
+    padding : 5rem 0;
+}
+
+.blogs-section > .container .blogs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.blog{
+    display: flex;
+    flex-direction: column;
+
+}
+.blog > h1{
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: lowercase;
+}
+.blog > h1::first-letter{   
+    text-transform: capitalize;
+}
+
+.blog > p{
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--light-dark-color);
+    font-weight: 400;
+}
+
+.blog a:link,
+.blog a:visited{
+    font-size: 1.4rem;
+    color: var(--gray-color);
+    padding: 0.6rem 1.8rem;
+    font-weight: 500;
+    background: var(--light-dark-color);
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    align-self: flex-end;
+}
+
+
+/* compose section */
+.compose-section{
+    padding : 5rem 0;
+}
+
+.compose-section > .container > h1{
+    font-size: 3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.compose-form {
+    margin-top: 3rem;
+}
+
+.compose-form .compose-title{
+    width: 100%;
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    border: 1px solid #d0d0d0;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.compose-form .compose-post{
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    height: 25rem;
+    font-family: inherit;
+    resize: none;
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    border: 1px solid #d0d0d0;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.compose-form .compose-btn{
+    display: block;
+    padding: 0.8rem 2.8rem;
+    border: none;
+    outline: none;
+    background: var(--light-dark-color);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+/* blog-section */
+.blog-section{
+    padding : 5rem 0;
+}
+
+.blog-layout-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.blog-layout-container > h1{
+    font-size: 3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.blog-layout-container > h1::first-letter{
+    text-transform: uppercase;
+}
+
+.blog-layout-container > p{
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--light-dark-color);
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+
+.blog-layout-container > a:link,
+.blog-layout-container > a:visited{
+    font-size: 1.5rem;
+    color: var(--gray-color);
+    padding: 0.6rem 1.8rem;
+    font-weight: 500;
+    background: var(--light-dark-color);
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    align-self: flex-end;
+}
