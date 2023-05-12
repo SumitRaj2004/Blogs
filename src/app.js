@@ -3,62 +3,34 @@ const dotenv = require("dotenv");
 dotenv.config();
 const path = require("path");
 const hbs =  require("hbs");
+const methodOverride = require("method-override");
 require("./db/conn");
 const Post = require("./models/posts");
 
+// importing routes
+const homeRouter = require("./routes/home");
+const aboutRouter = require("./routes/about")
+const blogsRouter = require("./routes/blogs");
+const composeRouter = require("./routes/compose");
+
+// getting different directories path
 const publicPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
-const app = express();
+const app = express();  
 app.use(express.json());
 app.use(express.urlencoded({extended : false}))
 app.use(express.static(publicPath));
+app.use(methodOverride("_method"));
 app.set("view engine", "hbs");
 app.set("views", viewsPath)
 hbs.registerPartials(partialsPath);
+app.use("/", homeRouter);
+app.use("/about", aboutRouter)
+app.use("/blogs", blogsRouter)
+app.use("/compose", composeRouter)
 
-app.get("/", async(req, res) => {
-    res.render("home");
-})
-
-app.get("/about", (req, res) => {
-    res.render("about");
-})
-
-app.get("/blogs", async(req, res) => {
-    const blogs = await Post.find();
-    res.render("blogs", {blogs});
-})
-
-app.get("/blogs/:id", async(req, res) => {
-    const _id = req.params.id;
-    const blog = await Post.find({_id});
-    const [{postTitle, postContent}] = blog;
-    res.render("blog", {
-        postTitle : postTitle,
-        postContent : postContent
-    })
-})
-
-app.get("/compose", (req, res) => {
-    res.render("compose");
-})
-
-app.post("/compose", async(req, res) => {
-    try{
-        const {postTitle, postContent} = req.body;
-        const post1 = new Post({postTitle, postContent});
-        const result = await post1.save();
-        res.redirect("/blogs");
-    }catch(err){
-        res.status(400).send(err)
-    }
-}) 
-
-
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log("server started listening request on port", port)
+app.listen(process.env.PORT, () => {
+    console.log(`server started listening request on port ${process.env.PORT}`)
 })

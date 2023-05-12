@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>
+        Update
+    </title>
+</head>
+<body>
+    {{>navbar}}
+    <section class="compose-section">
+        <div class="container">
+                <h1>Update</h1>
+                <form action="/blogs/update/{{_id}}?_method=PUT" class="update-form" method="post">
+                    <input type="text" placeholder="Title" class="update-title" name="postTitle" value="{{postTitle}}">
+                    <textarea placeholder="Post" class="update-post" name="postContent">{{postContent}}</textarea>
+                    <input type="submit" class="update-btn" value="Update">
+                </form>
+        </div>  
+    </section>
+</body>
+</html>

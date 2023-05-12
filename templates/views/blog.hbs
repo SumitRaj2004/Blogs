@@ -16,7 +16,13 @@
                 <div class="blog-layout-container">
                     <h1>{{postTitle}}</h1>
                     <p>{{postContent}}</p>
-                    <a href="/blogs">Back</a>
+                    <div class="blog-layout-bottom">
+                        <a href="/blogs">Back</a>
+                        <a href="/blogs/update/{{this._id}}">Edit</a>
+                        <form action="/blogs/delete/{{this._id}}?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
                 </div>
         </div>  
     </section>

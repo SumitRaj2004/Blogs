@@ -208,6 +208,61 @@ body{
     margin-left: auto;
 }
 
+/* update-section */
+.update-section{
+    padding : 5rem 0;
+}
+
+.update-section > .container > h1{
+    font-size: 3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.update-form {
+    margin-top: 3rem;
+}
+
+.update-form .update-title{
+    width: 100%;
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    border: 1px solid #d0d0d0;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.update-form .update-post{
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    height: 25rem;
+    font-family: inherit;
+    resize: none;
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    border: 1px solid #d0d0d0;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.update-form .update-btn{
+    display: block;
+    padding: 0.8rem 2.8rem;
+    border: none;
+    outline: none;
+    background: var(--light-dark-color);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: auto;
+}
 
 /* blog-section */
 .blog-section{
@@ -239,8 +294,17 @@ body{
     margin-top: 1.5rem;
 }
 
-.blog-layout-container > a:link,
-.blog-layout-container > a:visited{
+.blog-layout-container .blog-layout-bottom{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.blog-layout-bottom > a:link,
+.blog-layout-bottom > a:visited{
     font-size: 1.5rem;
     color: var(--gray-color);
     padding: 0.6rem 1.8rem;
@@ -250,5 +314,19 @@ body{
     border: none;
     text-decoration: none;
     border-radius: 0.4rem;
-    align-self: flex-end;
+}
+
+.blog-layout-bottom form button{
+    font-size: 1.5rem;
+    outline: none;
+    font-family: inherit;
+    color: var(--gray-color);
+    padding: 0.6rem 1.8rem;
+    font-weight: 500;
+    background: var(--light-dark-color);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    border-radius: 0.4rem;
 }
